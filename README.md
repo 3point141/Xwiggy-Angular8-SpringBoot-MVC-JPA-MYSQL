@@ -15,6 +15,7 @@ get's seperated from DB as well as Menu component.
 # Pre-Requisite
 1. [Java 7 or Above](https://java.com/en/download/help/download_options.xml) installed on device
 2. MySQL Server
+3. NodeJS - npm
 
 ## Installation
 Clone the [git](https://github.com/3point141/Xwiggy-Angular8-SpringBoot-MVC-JPA-MYSQL) repository to use Xerminal.
