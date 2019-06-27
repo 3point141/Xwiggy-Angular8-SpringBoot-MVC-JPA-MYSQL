@@ -63,6 +63,24 @@ This will fire up the Spring Boot at http://localhost:8080
 | /cart | POST | Accepts Cart model object, Return Integer total of all products purchased |
 | /changeDB | GET | Return Boolean if DB gets updated after a purchase is made |
 
+## Working Screenshots
+<table>
+  <tr>
+    <td><img src="README_Resources/Welcome.png" width="350" height="200" title="Welcome"></td>
+    <td><img src="README_Resources/Login.png" width="350" height="200" title="Login"></td>
+  </tr>
+  <tr>
+    <td><img src="README_Resources/Register.png" width="350" height="200" title="Register"></td>
+    <td><img src="README_Resources/Home.png" width="350" height="200" title="Home"></td>
+  </tr>
+  <tr>
+    <td><img src="README_Resources/Menu.png" width="350" height="200" title="Menu"></td>
+    <td><img src="README_Resources/Payment.png" width="350" height="200" title="Payment"></td>
+  </tr>
+ </table>
+ <div class="center">
+    <img src="README_Resources/Orders.png" width="350" height="200" title="Order">
+ </div>
 
 ## Author 
 Aman Kumar - [3point141](https://github.com/3point141)
