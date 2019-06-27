@@ -1,0 +1,55 @@
+<head>
+  <title>Xwiggy|Payment  </title>
+</head>
+<div class="body">
+  <br><br><br><br>
+<h1 align="center">XWIGGY | CHECKOUT</h1>
+
+  <div class="alert alert-warning" align="center">
+    <strong>Payment Portal</strong>
+  </div>
+
+  <div>
+    <h2 align="center">Payment Details</h2>
+    <h2 align="center">To Pay : {{total}}</h2>
+    <div align="center">
+      <table align="center">
+        <tr>
+          <td><label>Card Number</label></td>
+          <td><input type="text" placeholder="Valid Card Number"></td>
+        </tr>
+        <tr>
+          <td><label>Expiry</label></td>
+          <td>
+            <table>
+              <tr>
+                <td><input type="text" placeholder="MM"></td>
+                <td><input type="text" placeholder="YY"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><label>CVV</label></td>
+          <td>
+            <table>
+              <tr>
+                <td><input type="text" placeholder="CVV"></td>
+                <td>image</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Cardholder Name</label></td>
+          <td><input type="text" placeholder="Name"></td>
+        </tr>
+      </table>
+      <div align="center">
+        <button class="bigbutton" routerLink="/success" (click)="changeDB()"><span>Pay</span></button>
+      </div>
+    </div>
+  </div>
+
+
+</div>

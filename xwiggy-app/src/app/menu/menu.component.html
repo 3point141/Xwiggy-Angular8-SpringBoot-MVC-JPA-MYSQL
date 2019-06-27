@@ -1,0 +1,65 @@
+<div class="body">
+<br><br>
+<h1 align="center">Xwiggy | Menu</h1>
+  <br><br>
+
+<table class="table-hover" align="center">
+  <tr>
+    <td>
+      <div>
+        <table border = "1" cellpadding="30%" align="center" bordercolor="red">
+          <tr>
+            <th>Code</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity Available</th>
+          </tr>
+          <tr *ngFor="let m of model">
+            <td>{{m.id}}</td>
+            <td class="td">{{m.item}}</td>
+            <td>Rs. {{m.price}}</td>
+            <td>{{m.quantity}}</td>
+          </tr>
+        </table>
+      </div>
+    </td>
+    <td>
+      <div>
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
+          <table border = "1" cellpadding="30%" align="center" bordercolor="red">
+            <tr>
+              <td><input type="submit" class="bigbutton" value="Add To Cart"></td>
+            </tr>
+            <tr>
+              <td><input type="number" min=0 max=5 id="quantity1" name="quantity1" [(ngModel)]="modalCart.quantity1"></td>
+            </tr>
+            <tr>
+              <td><input type="number" min=0 max=11 id="quantity2" name="quantity2" [(ngModel)]="modalCart.quantity2"></td>
+            </tr>
+            <tr>
+              <td><input type="number" min=0 max=7 id="quantity3" name="quantity3" [(ngModel)]="modalCart.quantity3"></td>
+            </tr>
+          </table>
+
+        </form>
+      </div>
+    </td>
+  </tr>
+</table>
+
+  <br><br>
+  <div class="total" style="text-align: center; margin-left: 35%; font-size: large">
+  Cart Total : {{total}}
+  </div>
+<table align="center">
+  <tr>
+    <td>
+      <button routerLink="/checkout" class="bigbutton"><span>Buy Now</span></button>
+    </td>
+    <td>
+      <button routerLink="/home" type="button" class="bigbutton"><span>Log Out</span></button>
+      <!--<button routerLink="/home" class="bigbutton"><span>Log Out</span></button>-->
+    </td>
+  </tr>
+</table>
+</div>

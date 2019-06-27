@@ -1,0 +1,153 @@
+<div class="body">
+  <br><br><br><br>
+  <H1 align="center">XWIGGY | Registration</H1>
+  <br><br><br>
+
+  <div class="container" align="center">
+    <div class="row">
+      <div class="offset-3"></div>
+      <div class="col-md-6">
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && registerUser()" novalidate class="feedback-form">
+          <div *ngIf="present" class="alert alert-danger alert-box" align="center" style="width: 75%; margin: auto">
+            <strong>UserName Already Taken!</strong>
+          </div>
+          <div *ngIf="present==false" class="alert alert-success alert-box" align="center" style="width: 75%; margin: auto">
+            <strong>UserName Available!</strong>
+          </div>
+          <!-- UserName -->
+          <table align="center">
+          <div class="form-group">
+              <tr>
+                <td style="text-align: center"> <label for="username">Username</label></td>
+                <td><input type="text"
+                           id="username"
+                           class="form-control"
+                           name="username"
+                           placeholder="Your Username"
+                           [(ngModel)]="model.username"
+                           #username="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
+                           required="required"/></td>
+                <td><a (click)="usernamePresent()">Check Availbility</a> </td>
+
+              </tr>
+          </div>
+          <!-- Password -->
+          <div class="form-group">
+              <tr>
+                <td><label for="password">Password</label></td>
+                <td><input type="password"
+                           id="password"
+                           class="form-control"
+                           name="password"
+                           placeholder="Your Password"
+                           [(ngModel)]="model.password"
+                           #password="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+                           required="required"/></td>
+                <td></td>
+              </tr>
+          </div>
+
+          <!-- First Name -->
+          <div class="form-group">
+
+              <tr>
+                <td><label for="firstname">First name</label></td>
+                <td><input type="text"
+                           id="firstname"
+                           class="form-control"
+                           name="firstname"
+                           placeholder="Your Firstname"
+                           [(ngModel)]="model.firstname"
+                           #firstname="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && firstname.invalid }"
+                           required="required"/></td>
+                <td></td>
+              </tr>
+          </div>
+
+          <!-- Last Name -->
+          <div class="form-group">
+              <tr>
+                <td><label for="lastname">Last Name</label></td>
+                <td><input type="text"
+                           id="lastname"
+                           class="form-control"
+                           name="lastname"
+                           placeholder="Your Lastname"
+                           [(ngModel)]="model.lastname"
+                           #lastname="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && lastname.invalid }"
+                           required="required"/></td>
+                <td></td>
+              </tr>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+              <tr>
+                <td><label for="email">Email</label></td>
+                <td><input type="text"
+                           id="email"
+                           class="form-control"
+                           name="email"
+                           placeholder="email"
+                           [(ngModel)]="model.email"
+                           #email="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+                           required="required"/></td>
+                <td></td>
+              </tr>
+          </div>
+
+          <!-- Address -->
+          <div class="form-group">
+              <tr>
+                <td><label for="address">Address</label></td>
+                <td><input type="text"
+                           id="address"
+                           class="form-control"
+                           name="address"
+                           placeholder="address"
+                           [(ngModel)]="model.address"
+                           #address="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && address.invalid }"
+                           required="required"/></td>
+                <td></td>
+              </tr>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+              <tr>
+                <td><label for="phone">Phone</label></td>
+                <td><input type="text"
+                           id="phone"
+                           class="form-control"
+                           name="phone"
+                           placeholder="phone"
+                           [(ngModel)]="model.phone"
+                           #firstname="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }"
+                           required="required"/></td>
+                <td></td>
+              </tr>
+          </div>
+          </table>
+          <table align="center" style="padding-right:10%">
+            <tr>
+              <td><button type="submit" class="bigbutton">
+                <span> Register</span></button>
+              </td>
+              <td><button routerLink="/home" class="bigbutton"><span>Home</span></button> </td>
+            </tr>
+          </table>
+
+        </form>
+      </div>
+      <div class="offset-3"></div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,70 @@
+.body {
+  height: -webkit-fill-available;
+  background: #393939;
+  color: white;
+  font: 14px Helvetica, sans-serif;
+}
+
+label {
+  font: bold 20px Helvetica, sans-serif;
+  display: block;
+  float: left;
+  text-align: right;
+  padding: 5px 10px 0 0;
+  width: 140px;
+}
+
+form div {
+  overflow: hidden;
+  margin: 0 0 5px 0;
+}
+
+
+.bigbutton {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.bigbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bigbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.bigbutton:hover span {
+  padding-right: 25px;
+}
+
+.bigbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
