@@ -11,14 +11,44 @@ public class Food {
     private String item;
     private int price;
     private int quantity;
+    private String url;
+    private String formID;
+    private String cartID;
 
     public Food(){}
 
-    public Food(String id, String item, int price,int quantity) {
+    public Food(String id, String item, int price,int quantity, String url, String formID, String cartID) {
         this.id = id;
         this.item = item;
         this.price = price;
         this.quantity=quantity;
+        this.url=url;
+        this.formID=formID;
+        this.cartID=cartID;
+    }
+
+    public String getFormID() {
+        return formID;
+    }
+
+    public void setFormID(String formID) {
+        this.formID = formID;
+    }
+
+    public String getCartID() {
+        return cartID;
+    }
+
+    public void setCartID(String cartID) {
+        this.cartID = cartID;
+    }
+
+    public String getUrl(){
+        return url;
+    }
+
+    public void setUrl(String url){
+        this.url=url;
     }
 
     public String getId() {
@@ -56,10 +86,13 @@ public class Food {
     @Override
     public String toString() {
         return "Food{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", item='" + item + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
+                ", url='" + url + '\'' +
+                ", formID='" + formID + '\'' +
+                ", cartID='" + cartID + '\'' +
                 '}';
     }
 }
