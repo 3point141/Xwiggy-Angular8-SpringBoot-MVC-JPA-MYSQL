@@ -19,6 +19,9 @@ CREATE TABLE `myusers`.`food` (
    `item` VARCHAR(45) NOT NULL,
    `prince` INT NOT NULL,
    `quantity` INT NOT NULL,
+   `url` VARCHAR(150) NOT NULL ,
+   `formID` VARCHAR(50) NOT NULL ,
+   `cartID` VARCHAR(50) NOT NULL ,
    PRIMARY KEY (`id`));
 
 CREATE TABLE 'myusers'.'cart' (
