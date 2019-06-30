@@ -7,7 +7,7 @@
     <div class="row">
       <div class="offset-3"></div>
       <div class="col-md-6">
-        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && registerUser()" novalidate class="feedback-form">
+        <form name="form" #f="ngForm" (ngSubmit)="emailValidation&&phoneValidation&&passwordValidation&&f.form.valid && registerUser()" novalidate class="feedback-form">
           <div *ngIf="present" class="alert alert-danger alert-box" align="center" style="width: 75%; margin: auto">
             <strong>UserName Already Taken!</strong>
           </div>
@@ -28,7 +28,7 @@
                            #username="ngModel"
                            [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
                            required="required"/></td>
-                <td><a (click)="usernamePresent()">Check Availbility</a> </td>
+                <td><a (click)="usernamePresent()" data-toggle="tooltip" data-placement="right" title="Click to check availability">Check Availbility</a> </td>
 
               </tr>
           </div>
@@ -36,16 +36,18 @@
           <div class="form-group">
               <tr>
                 <td><label for="password">Password</label></td>
-                <td><input type="password"
+                <td><input (keyup)="passwordStrength()" type="password"
                            id="password"
                            class="form-control"
                            name="password"
                            placeholder="Your Password"
                            [(ngModel)]="model.password"
                            #password="ngModel"
+                           minlength="8"
+                           maxlength="16"
                            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
                            required="required"/></td>
-                <td></td>
+                <td><a *ngIf="!passwordValidation" class="password" data-toggle="tooltip" data-placement="right" title="Your Password should contain : &#013; 1 special character &#013; 1 Upper Case character &#013; 1 Numeric character &#013; Minumum Length = 8 &#013; Maximum length = 16">Follow the Password Rules</a> </td>
               </tr>
           </div>
 
@@ -88,7 +90,8 @@
           <div class="form-group">
               <tr>
                 <td><label for="email">Email</label></td>
-                <td><input type="text"
+                <td><input (keyup)="checkEmail()"
+                           type="text"
                            id="email"
                            class="form-control"
                            name="email"
@@ -97,7 +100,7 @@
                            #email="ngModel"
                            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
                            required="required"/></td>
-                <td></td>
+                <td><a *ngIf="!emailValidation" ndata-toggle="tooltip" data-placement="right" title="Enter a valid Email Address">Not a valid email</a></td>
               </tr>
           </div>
 
@@ -122,16 +125,21 @@
           <div class="form-group">
               <tr>
                 <td><label for="phone">Phone</label></td>
-                <td><input type="text"
+                <td><input (keyup)="checkPhone()"
+                           type="text"
                            id="phone"
                            class="form-control"
                            name="phone"
                            placeholder="phone"
                            [(ngModel)]="model.phone"
-                           #firstname="ngModel"
+                           #phone="ngModel"
                            [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }"
+                           maxlength="10"
+                           minlength="10"
                            required="required"/></td>
-                <td></td>
+                <td>
+                  <a *ngIf="!phoneValidation" data-toggle="tooltip" data-placement="right" title="Enter a valid Phone Number">Invalid Phone Number</a>
+                </td>
               </tr>
           </div>
           </table>

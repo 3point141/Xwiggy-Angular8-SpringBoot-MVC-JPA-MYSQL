@@ -13,8 +13,12 @@ export class CheckoutComponent implements OnInit {
   constructor(private http:HttpClient, private router:Router) { }
 
   user:User = AppComponent.modelUser;
-  total:number=AppComponent.total;
+  total:string;
   ngOnInit() {
+    if (sessionStorage.getItem("userData") == null) {
+      this.router.navigate(['login']);
+    }
+    this.total=sessionStorage.getItem('total');
   }
 
   changeDB():void{

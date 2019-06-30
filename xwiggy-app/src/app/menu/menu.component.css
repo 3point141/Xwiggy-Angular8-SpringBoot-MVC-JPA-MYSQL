@@ -15,6 +15,7 @@ label {
 }
 input{
   width: -webkit-fill-available;
+  padding: inherit;
 }
 form div {
   overflow: hidden;
@@ -67,4 +68,21 @@ form div {
   opacity: 1;
   right: 0;
 }
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
+}
+
+p{
+  color: black;
+}
+
+.input-align{
+  text-align: center;
+}
+
 

@@ -24,7 +24,14 @@ export class MenuComponent implements OnInit {
   constructor(private http:HttpClient, private router:Router,private menuService:MenuServiceService) { }
 
   ngOnInit() {
+    if (sessionStorage.getItem("userData") == null) {
+      this.router.navigate(['login']);
+    }
     this.getItems();
+  }
+
+  clearLocal(){
+    sessionStorage.clear();
   }
 
   getItems():void{
@@ -37,7 +44,8 @@ export class MenuComponent implements OnInit {
     let url = "http://localhost:8080/cart";
     this.http.post<number>(url,this.modalCart).subscribe(
       res=>{
-        AppComponent.total=res;
+        // AppComponent.total=res;
+        sessionStorage.setItem('total',res.toString());
         this.total=res;
       },
       err=>{
@@ -53,6 +61,9 @@ export interface menu {
   item:string;
   price:number;
   quantity:number;
+  url:string;
+  formID:string;
+  cartID:string;
 }
 
 export interface cart {

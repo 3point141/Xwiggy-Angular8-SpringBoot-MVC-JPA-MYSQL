@@ -2,7 +2,7 @@
   <br><br><br>
   <h1 align="center">XWIGGY | HOME</h1>
   <br><br>
-<h1 align="left">Welceome, {{user.firstname}}</h1>
+<h1 align="left">Welceome, {{modelUser.firstname}}</h1>
 
   <div class="alert alert-warning" align="center">
     <strong>User Details</strong>
@@ -11,26 +11,26 @@
 <table cellpadding="30%" align="center" >
   <tr>
     <td>First Name</td>
-    <td>{{user.firstname}}</td>
+    <td>{{modelUser.firstname}}</td>
   </tr>
   <tr>
     <td>Last Name</td>
-    <td>{{user.lastname}}</td>
+    <td>{{modelUser.lastname}}</td>
   </tr>
   <tr>
     <td>Mobile Number</td>
-    <td>{{user.phone}}</td>
+    <td>{{modelUser.phone}}</td>
   </tr>
   <tr>
     <td>Email Id</td>
-    <td>{{user.email}}</td>
+    <td>{{modelUser.email}}</td>
   </tr>
   <tr>
   </tr>
   <tr>
   </tr>
   <tr>
-    <td><button class="bigbutton" routerLink="/home"><span>Log Out</span></button></td>
+    <td><button class="bigbutton" routerLink="/home" (click)="clearLocal()"><span>Log Out</span></button></td>
     <td><button class="bigbutton" routerLink="/menu"><span>Menu</span></button></td>
 
     <td></td>

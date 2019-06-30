@@ -19,13 +19,16 @@ export class RegisterComponent implements OnInit {
     lastname:'',
     email:'',
     address:'',
-    phone:0
+    phone:null
   };
 
   present:boolean = null;
   usernameAvailability:string;
   fontColor:string;
 
+  phoneValidation:boolean=true;
+  emailValidation:boolean=true;
+  passwordValidation:boolean=true;
 
   usernamePresent():void{
     this.fontColor='';
@@ -47,6 +50,39 @@ export class RegisterComponent implements OnInit {
     )
   }
 
+  checkPhone()
+  {
+   /* if(String(this.model.phone).length==0 || this.model.phone==null) {
+      this.phoneValidation=true;
+      return;
+    }*/
+    let matcher = new RegExp('^[+ 0-9]{10}$');
+    if (String(this.model.phone).length==10)
+      this.phoneValidation=(matcher.test(String(this.model.phone)));
+  }
+
+  checkEmail(){
+    if(this.model.email.length==0)
+    {
+      this.emailValidation=true;
+    }
+    if(this.model.email.length>0 &&(this.model.email).indexOf("@")==-1)
+      this.emailValidation=false;
+    if(this.model.email.length>0 &&(this.model.email).indexOf("@")!=-1)
+      this.emailValidation=true;
+  }
+
+  passwordStrength(){
+    if(this.model.password.length==0)
+      this.passwordValidation=true;
+    if(this.model.password.length<8)
+      this.passwordValidation=false;
+    if(this.model.password.length>=8)
+    {
+      let matcher = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,16})');
+      this.passwordValidation=matcher.test(this.model.password);
+    }
+  }
 
   registerUser():void{
     let url = "http://localhost:8080/register";

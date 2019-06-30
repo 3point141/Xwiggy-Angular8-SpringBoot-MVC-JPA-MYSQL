@@ -21,17 +21,22 @@ export class LoginComponent implements OnInit {
   constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit() {
+
   }
 
   sendFeedback(): void {
     let url = "http://localhost:8080/login";
+    let key='userData';
     this.http.post<User>(url,this.model).subscribe(
       res => {
-       AppComponent.modelUser =res;
+        // localStorage.setItem(key,JSON.stringify(res));
+        sessionStorage.setItem(key,JSON.stringify(res));
         if(res!=null)
         this.router.navigate(['welcome']);
-        if(res==null)
-          this.message="Username Or Password is Wrong";
+        if(res==null) {
+          this.message = "Username Or Password is Wrong";
+          sessionStorage.clear();
+        }
       },
       err=>{
         console.log([this.model]);
