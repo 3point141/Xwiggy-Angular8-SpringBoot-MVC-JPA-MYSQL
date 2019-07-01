@@ -19,9 +19,11 @@ export class RegisterComponent implements OnInit {
     lastname:'',
     email:'',
     address:'',
-    phone:null
+    phone:null,
+    merchant:null
   };
 
+  options:string=null;
   present:boolean = null;
   usernameAvailability:string;
   fontColor:string;
@@ -33,6 +35,9 @@ export class RegisterComponent implements OnInit {
   usernamePresent():void{
     this.fontColor='';
     let url = "http://localhost:8080/checkUserName";
+
+
+
     this.http.post<boolean>(url,this.model.username).subscribe(
       res=>{
         this.present=res;
@@ -50,12 +55,12 @@ export class RegisterComponent implements OnInit {
     )
   }
 
+  updateSelect(){
+      this.model.merchant = this.options.length != 4;
+  }
+
   checkPhone()
   {
-   /* if(String(this.model.phone).length==0 || this.model.phone==null) {
-      this.phoneValidation=true;
-      return;
-    }*/
     let matcher = new RegExp('^[+ 0-9]{10}$');
     if (String(this.model.phone).length==10)
       this.phoneValidation=(matcher.test(String(this.model.phone)));
@@ -85,6 +90,8 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser():void{
+    this.updateSelect();
+
     let url = "http://localhost:8080/register";
     this.http.post<User>(url,this.model).subscribe(
       res=>{

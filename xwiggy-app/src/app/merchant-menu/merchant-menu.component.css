@@ -8,16 +8,27 @@
 label {
   font: bold 20px Helvetica, sans-serif;
   display: block;
-  text-align: center;
+  float: left;
+  text-align: right;
   padding: 5px 10px 0 0;
   width: 140px;
 }
-
+input{
+  width: -webkit-fill-available;
+  padding: inherit;
+}
 form div {
   overflow: hidden;
   margin: 0 0 5px 0;
 }
 
+.dec {
+  background-position: 0 -29px;
+}
+
+.buttons {
+  padding: 20px 0 0 140px;
+}
 
 .bigbutton {
   border-radius: 4px;
@@ -27,7 +38,7 @@ form div {
   text-align: center;
   font-size: 15px;
   padding: 20px;
-  width: 120px;
+  width: 175px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -58,23 +69,20 @@ form div {
   right: 0;
 }
 
-a:link, a:visited {
-  background-color: #f44336;
-  color: white;
-  padding: 14px 25px;
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
+}
+
+p{
+  color: black;
+}
+
+.input-align{
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
 }
 
-a:hover, a:active {
-  background-color: red;
-}
 
-select {
-  width: 203px;
-}
-
-option {
-  width: 203px;
-}

@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit() {
-
+    if(sessionStorage.length>0)
+      this.router.navigate(['welcome']);
   }
 
   sendFeedback(): void {
@@ -31,8 +32,12 @@ export class LoginComponent implements OnInit {
       res => {
         // localStorage.setItem(key,JSON.stringify(res));
         sessionStorage.setItem(key,JSON.stringify(res));
-        if(res!=null)
-        this.router.navigate(['welcome']);
+        if(res!=null && !res.merchant) {
+          this.router.navigate(['welcome']);
+        }
+        if(res!=null && res.merchant){
+          this.router.navigate(['merchantWelcome']);
+        }
         if(res==null) {
           this.message = "Username Or Password is Wrong";
           sessionStorage.clear();

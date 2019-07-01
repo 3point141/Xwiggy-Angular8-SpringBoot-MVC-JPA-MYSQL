@@ -1,19 +1,18 @@
-import {ApplicationModule, Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {cart, menu} from "../menu/menu.component";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {Observable} from "rxjs";
 import {MenuServiceService} from "../menu-service.service";
-import {AppComponent} from "../app.component";
+
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-merchant-menu',
+  templateUrl: './merchant-menu.component.html',
+  styleUrls: ['./merchant-menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MerchantMenuComponent implements OnInit {
 
   model:menu[];
-  total:number;
 
   modalCart:cart={
     quantity1:0,
@@ -41,33 +40,16 @@ export class MenuComponent implements OnInit {
   }
 
   getTotal():void{
-    let url = "http://localhost:8080/cart";
+    let url = "http://localhost:8080/addToCart";
     this.http.post<number>(url,this.modalCart).subscribe(
       res=>{
-        // AppComponent.total=res;
-        sessionStorage.setItem('total',res.toString());
-        this.total=res;
+        this.ngOnInit();
       },
       err=>{
-        alert("Please select at least 1 item");
+        alert("Error adding items to cart");
       }
     )
 
   }
 }
 
-export interface menu {
-  id:string;
-  item:string;
-  price:number;
-  quantity:number;
-  url:string;
-  formID:string;
-  cartID:string;
-}
-
-export interface cart {
-  quantity1:number;
-  quantity2:number;
-  quantity3:number;
-}

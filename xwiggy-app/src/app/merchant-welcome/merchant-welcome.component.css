@@ -8,7 +8,8 @@
 label {
   font: bold 20px Helvetica, sans-serif;
   display: block;
-  text-align: center;
+  float: left;
+  text-align: right;
   padding: 5px 10px 0 0;
   width: 140px;
 }
@@ -56,25 +57,4 @@ form div {
 .bigbutton:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-a:link, a:visited {
-  background-color: #f44336;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover, a:active {
-  background-color: red;
-}
-
-select {
-  width: 203px;
-}
-
-option {
-  width: 203px;
 }

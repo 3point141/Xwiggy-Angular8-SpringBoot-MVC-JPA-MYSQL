@@ -28,7 +28,7 @@ form div {
   text-align: center;
   font-size: 15px;
   padding: 20px;
-  width: 120px;
+  width: 125px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -68,3 +68,9 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.question{
+  width: auto;
+  height: 20px;
+}
+

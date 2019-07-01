@@ -1,0 +1,46 @@
+<div class="body">
+  <br><br>
+  <h1 align="center">Xwiggy | Menu</h1>
+  <br><br>
+
+  <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
+    <table align="center">
+      <tr>
+        <td *ngFor="let m of model">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top zoom" src="{{m.url}}" alt="Card image cap" style="height: 190px">
+            <div class="card-body">
+              <h5 class="card-title" style="color: black">{{m.item}}</h5>
+              <p class="card-text">Price : Rs.{{m.price}}</p>
+              <p> Quantity Available : {{m.quantity}}</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="input-group-text input-align" type="number" id="quantity1" name="quantity1" min="0" max="{{model[0].quantity}}" [(ngModel)]="modalCart.quantity1">
+        </td>
+        <td>
+          <input class="input-group-text input-align" type="number" id="quantity2" name="quantity2" min="0" max="{{model[1].quantity}}" [(ngModel)]="modalCart.quantity2">
+        </td>
+        <td>
+          <input class="input-group-text input-align" type="number" id="quantity3" name="quantity3" min="0" max="{{model[2].quantity}}" [(ngModel)]="modalCart.quantity3">
+        </td>
+      </tr>
+    </table>
+    <br><br>
+    <table align="center">
+      <tr>
+        <td>
+          <input type="submit" class="bigbutton" value="Update Quantity">
+        </td>
+        <td>
+          <button routerLink="/home" type="button" class="bigbutton" (click)="clearLocal()"><span>Log Out</span></button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+

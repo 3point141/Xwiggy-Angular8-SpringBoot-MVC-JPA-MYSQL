@@ -100,7 +100,7 @@
                            #email="ngModel"
                            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
                            required="required"/></td>
-                <td><a *ngIf="!emailValidation" ndata-toggle="tooltip" data-placement="right" title="Enter a valid Email Address">Not a valid email</a></td>
+                <td><a *ngIf="!emailValidation" data-toggle="tooltip" data-placement="right" title="Enter a valid Email Address">Not a valid email</a></td>
               </tr>
           </div>
 
@@ -142,7 +142,20 @@
                 </td>
               </tr>
           </div>
+            <div class="form-group">
+              <tr>
+                <td>
+                  <label >Account</label>
+                </td>
+                <td><select class="form-control" [(ngModel)]="options"
+                name="options" id="options">
+                  <option>User</option>
+                  <option>Merchant</option>
+                </select></td>
+              </tr>
+            </div>
           </table>
+
           <table align="center" style="padding-right:10%">
             <tr>
               <td><button type="submit" class="bigbutton">

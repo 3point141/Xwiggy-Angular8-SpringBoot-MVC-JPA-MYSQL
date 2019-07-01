@@ -16,15 +16,19 @@
       <table align="center">
         <tr>
           <td><label>Card Number</label></td>
-          <td><input type="text" placeholder="Valid Card Number"></td>
+          <td><input type="text" placeholder="Valid Card Number"
+                      minlength="16"
+                      maxlength="16"
+                      required="required">
+          </td>
         </tr>
         <tr>
           <td><label>Expiry</label></td>
           <td>
             <table>
               <tr>
-                <td><input type="text" placeholder="MM"></td>
-                <td><input type="text" placeholder="YY"></td>
+                <td><input type="text" placeholder="MM" minlength="2" maxlength="2" required="required"></td>
+                <td><input type="text" placeholder="YY" minlength="2" maxlength="2" required="required"></td>
               </tr>
             </table>
           </td>
@@ -35,7 +39,8 @@
             <table>
               <tr>
                 <td><input type="text" placeholder="CVV"></td>
-                <td>image</td>
+                <td><img class="question" src="http://pngimg.com/uploads/question_mark/question_mark_PNG49.png"
+                         data-toggle="tooltip" data-placement="right" title="Card CVV Help"></td>
               </tr>
             </table>
           </td>
@@ -45,9 +50,16 @@
           <td><input type="text" placeholder="Name"></td>
         </tr>
       </table>
-      <div align="center">
-        <button class="bigbutton" routerLink="/success" (click)="changeDB()"><span>Pay</span></button>
-      </div>
+      <table>
+        <tr>
+          <td>
+            <button class="bigbutton" routerLink="/success" (click)="changeDB()"><span>Pay</span></button>
+          </td>
+          <td>
+            <button class="bigbutton" routerLink="/menu"><span>Go Back</span></button>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 

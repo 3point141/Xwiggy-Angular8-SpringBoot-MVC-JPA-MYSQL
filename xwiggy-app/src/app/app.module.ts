@@ -13,6 +13,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MenuComponent } from './menu/menu.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SuccessComponent } from './success/success.component';
+import { MerchantWelcomeComponent } from './merchant-welcome/merchant-welcome.component';
+import { MerchantMenuComponent } from './merchant-menu/merchant-menu.component';
 
 const appRoutes:Routes=[
   {path:'login',
@@ -29,6 +31,10 @@ const appRoutes:Routes=[
   component:CheckoutComponent},
   {path:'success',
   component:SuccessComponent},
+  {path:'merchantWelcome',
+  component:MerchantWelcomeComponent},
+  {path:'merchantMenu',
+  component:MerchantMenuComponent},
   {path:'',
   component:HomeComponent}
 ];
@@ -42,7 +48,9 @@ const appRoutes:Routes=[
     WelcomeComponent,
     MenuComponent,
     CheckoutComponent,
-    SuccessComponent
+    SuccessComponent,
+    MerchantWelcomeComponent,
+    MerchantMenuComponent
   ],
   imports: [
     BrowserModule,

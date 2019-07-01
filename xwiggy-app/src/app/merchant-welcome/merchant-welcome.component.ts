@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {AppComponent, User} from "../app.component";
+import {User} from "../app.component";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-welcom',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  selector: 'app-merchant-welcome',
+  templateUrl: './merchant-welcome.component.html',
+  styleUrls: ['./merchant-welcome.component.css']
 })
-export class WelcomeComponent implements OnInit {
+export class MerchantWelcomeComponent implements OnInit {
 
-  modelUser: User = {
+  modelMerchant: User = {
     username:'',
     password:'',
     email:'',
@@ -20,10 +20,7 @@ export class WelcomeComponent implements OnInit {
     merchant:null
   };
 
-  constructor(private router:Router) {
-
-  }
-  // user: User = AppComponent.modelUser;
+  constructor(private router:Router) { }
 
   ngOnInit() {
     if (sessionStorage.getItem("userData")==null) {
@@ -32,8 +29,9 @@ export class WelcomeComponent implements OnInit {
 
     let userData = JSON.parse(sessionStorage.getItem('userData'));
     console.log(userData);
-    Object.assign(this.modelUser,userData);
+    Object.assign(this.modelMerchant,userData);
   }
+
 
   clearLocal(){
     sessionStorage.clear();
