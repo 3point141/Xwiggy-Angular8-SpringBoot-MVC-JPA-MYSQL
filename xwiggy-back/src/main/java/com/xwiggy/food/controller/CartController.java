@@ -26,4 +26,10 @@ public class CartController {
         return true;
     }
 
+    @PostMapping("/addToCart")
+    public Cart increaseQuantity(@RequestBody Cart cart, Model model){
+        cartDao.addItems(cart);
+        return cart;
+    }
+
 }

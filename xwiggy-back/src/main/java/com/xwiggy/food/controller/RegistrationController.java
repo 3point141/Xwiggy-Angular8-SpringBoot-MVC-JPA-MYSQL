@@ -20,6 +20,7 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public User addUser(@RequestBody User user, Model model) {
+        System.out.println(user.toString());
         userDao.register(user);
         return user;
     }

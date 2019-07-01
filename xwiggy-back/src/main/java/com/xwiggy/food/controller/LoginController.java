@@ -24,7 +24,7 @@ public class LoginController {
     public User loginProcess(@RequestBody Login login, Model model) {
         User user = null;
         user = userDao.validateUser(login);
-
+        user.setPassword(null);
         return user;
     }
 

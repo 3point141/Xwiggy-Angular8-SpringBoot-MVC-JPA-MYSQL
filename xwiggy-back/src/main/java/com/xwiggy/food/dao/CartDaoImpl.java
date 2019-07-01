@@ -36,4 +36,12 @@ public class CartDaoImpl{
     public List<Cart> getAllCart(){
         return cartDao.findAll();
     }
+
+    public void addItems(Cart cart){
+        List<Food> foods = foodDao.findAll();
+        foods.get(0).setQuantity(foods.get(0).getQuantity()+cart.getQuantity1());
+        foods.get(1).setQuantity(foods.get(1).getQuantity()+cart.getQuantity2());
+        foods.get(2).setQuantity(foods.get(2).getQuantity()+cart.getQuantity3());
+        foodDao.saveAll(foods);
+    }
 }
