@@ -18,7 +18,7 @@ get's seperated from DB as well as Menu component.
 3. NodeJS - npm
 
 ## Installation
-Clone the [git](https://github.com/3point141/Xwiggy-Angular8-SpringBoot-MVC-JPA-MYSQL) repository to use Xerminal.
+Clone the [git](https://github.com/3point141/Xwiggy-Angular8-SpringBoot-MVC-JPA-MYSQL) repository to use Xwiggy.
 
 ```
 git clone https://github.com/3point141/Xwiggy-Angular8-SpringBoot-MVC-JPA-MYSQL.git
@@ -84,3 +84,5 @@ This will fire up the Spring Boot at http://localhost:8080
 
 ## Author 
 Aman Kumar - [3point141](https://github.com/3point141)
+
+=> Working on Vagrant. Vagrant Files and Combined JAR files for both servers will be uploaded soon. 
