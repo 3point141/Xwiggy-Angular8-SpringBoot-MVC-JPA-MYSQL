@@ -154,4 +154,4 @@ java -jar xwiggy-0.0.1-SNAPSHOT.jar
 ## Author 
 Made with :heart: by Aman Kumar - [3point141](https://github.com/3point141)
 
-:zap: This project is in very early stage. Sume bugs can be noticed very frequently. Feel free to test is and report the bugs. 
+:zap: This project is in very early stage. Some bugs can be noticed very frequently. Feel free to test is and report the bugs. 
