@@ -152,6 +152,6 @@ java -jar xwiggy-0.0.1-SNAPSHOT.jar
  </div>
 
 ## Author 
-Aman Kumar - [3point141](https://github.com/3point141)
+Made with :heart: by Aman Kumar - [3point141](https://github.com/3point141)
 
-=> Working on Vagrant. Vagrant Files and Combined JAR files for both servers will be uploaded soon. 
+:zap: This project is in very early stage. Sume bugs can be noticed very frequently. Feel free to test is and report the bugs. 
