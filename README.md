@@ -29,7 +29,7 @@ git clone https://github.com/3point141/Xwiggy-Angular8-SpringBoot-MVC-JPA-MYSQL.
 | xwiggy-app| Frontend |
 | xwiggy-back | Backend |
 
-## Run
+## Run on Host Machine
 
 1. Open xwiggy-app as a project
 ```
@@ -51,6 +51,33 @@ Location : src/main/resources/application.properties
 Run src/main/java/com/xwiggy/food/XwiggyApplication.java
 ```
 This will fire up the Spring Boot at http://localhost:8080
+
+## Run using Vargant Box
+Find the Vagrant file in [Vagrant Resources](https://github.com/3point141/Xwiggy-Angular8-SpringBoot-MVC-JPA-MYSQL/tree/master/Vagrant%20Resources) <br>
+The folder also consist of shell script whill will help to install the dependencies in virtual machine at time of boot up.<br>
+
+1. Download [Oracle Virtual Box](https://www.virtualbox.org/wiki/Downloads) and install it on your host machine. <br><br>
+2. Download [Vagrant Box](https://www.vagrantup.com/downloads.html) by HashiCorp and install it on your host machine <br>
+Navigate to vagrant file location and fire up your Terminal/Cmd
+```
+vagrant up
+```
+This will make your virtual machine in oracle virtual box or any service prover for vm with specifications :
+
+|Specification | Description |
+| --- | --- |
+| Operating System | ubuntu/trusty64(x64) v20190429.0.1 |
+| Base Memory | 512 MB |
+
+<br>
+The Shell script will install
+<br>
+|Application  | Description |<br>
+| npm         | 6.4.1       |<br>
+| node        | v10.14.0    |<br>
+|MySql server | xx          |<br>
+
+Password for MySQL will be abcd1234
 
 ## Rest Api's
 | Url Mapping | Type | Function |
