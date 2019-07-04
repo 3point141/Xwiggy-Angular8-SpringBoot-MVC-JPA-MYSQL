@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {MenuServiceService} from "../menu-service.service";
 import {AppComponent} from "../app.component";
+import {count} from "rxjs/operators";
 
 @Component({
   selector: 'app-menu',
@@ -13,6 +14,7 @@ import {AppComponent} from "../app.component";
 export class MenuComponent implements OnInit {
 
   model:menu[];
+  values:Quantity[] = [];
   total:number;
 
   modalCart:cart={
@@ -30,6 +32,7 @@ export class MenuComponent implements OnInit {
     this.getItems();
   }
 
+
   clearLocal(){
     sessionStorage.clear();
   }
@@ -37,12 +40,31 @@ export class MenuComponent implements OnInit {
   getItems():void{
     this.menuService.getItems().subscribe((men: any[]) => {
       this.model = men;
-    })
+      for (let i=0;i<this.model.length;i++){
+        this.values.push(new Quantity());
+        this.values[i].quantity=0;
+      }
+    });
   }
 
+  test:string;
+  /*getTotal():void{
+    let url = "http://192.168.33.10:8080/values";
+    this.http.post<string>(url,this.values).subscribe(
+      res=>{
+        sessionStorage.setItem('total',res.toString());
+        this.test=res;
+      },
+      err=>{
+        alert("Please select at least 1 item");
+      }
+    )
+  }*/
+
   getTotal():void{
-    let url = "http://localhost:8080/cart";
+    let url = "http://192.168.33.10:8080/cart";
     this.http.post<number>(url,this.modalCart).subscribe(
+
       res=>{
         // AppComponent.total=res;
         sessionStorage.setItem('total',res.toString());
@@ -70,4 +92,8 @@ export interface cart {
   quantity1:number;
   quantity2:number;
   quantity3:number;
+}
+
+export class Quantity {
+  quantity:number;
 }

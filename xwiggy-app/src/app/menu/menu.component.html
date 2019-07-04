@@ -18,9 +18,14 @@
         </td>
       </tr>
       <tr>
+        <!--<ng-container *ngFor="let vale of values; let index=index;">
         <td>
-          <input class="input-group-text input-align" type="number" id="quantity1" name="quantity1" min="0" max="{{model[0].quantity}}" [(ngModel)]="modalCart.quantity1">
+          <input class="input-group-text input-align" type="number" name="name+{{index}}" min="0" max="{{model[index].quantity}}" value="{{values[index].quantity}}" [(ngModel)]="values[index].quantity">
         </td>
+        </ng-container>-->
+        <td>
+        <input class="input-group-text input-align" type="number" id="quantity1" name="quantity1" min="0" max="{{model[0].quantity}}" [(ngModel)]="modalCart.quantity1">
+      </td>
         <td>
           <input class="input-group-text input-align" type="number" id="quantity2" name="quantity2" min="0" max="{{model[1].quantity}}" [(ngModel)]="modalCart.quantity2">
         </td>
