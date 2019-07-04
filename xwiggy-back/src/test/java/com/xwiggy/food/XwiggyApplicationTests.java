@@ -52,7 +52,7 @@ public class XwiggyApplicationTests {
         Food food = new Food();
         food.setId("abc");
         Food food1 = foodDao.validateFoodInfo(food.getId());
-        Assert.assertEquals("coffee",food1.getItem());
+        Assert.assertEquals("Coffee",food1.getItem());
         Assert.assertEquals(50,food1.getPrice());
     }
 

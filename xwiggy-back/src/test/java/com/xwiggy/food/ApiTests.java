@@ -66,7 +66,7 @@ public class ApiTests {
     @Test
     public void getRegisterApi() throws Exception{
         mvc.perform(MockMvcRequestBuilders
-                .get("/register")
+                .get("/api/register")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
