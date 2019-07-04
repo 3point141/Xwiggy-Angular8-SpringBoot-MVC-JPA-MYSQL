@@ -43,7 +43,7 @@ public class ApiTests {
     @MockBean
     CartDaoImpl cartDao;
 
-    @Test
+    /*@Test
     public void postLoginAPI() throws Exception
     {
         mvc.perform( MockMvcRequestBuilders
@@ -52,7 +52,7 @@ public class ApiTests {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
-    }
+    }*/
 
     @Test
     public void getLoginApi() throws Exception{
