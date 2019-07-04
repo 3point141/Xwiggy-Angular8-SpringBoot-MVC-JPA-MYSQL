@@ -3,7 +3,9 @@ package com.xwiggy.food.controller;
 import com.xwiggy.food.dao.UserDaoImpl;
 import com.xwiggy.food.model.Login;
 import com.xwiggy.food.model.User;
+import com.xwiggy.food.utility.StrongAES;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +28,11 @@ public class LoginController {
         user = userDao.validateUser(login);
         user.setPassword(null);
         return user;
+    }
+
+    @RequestMapping("/xx")
+    private String xx(){
+        return new StrongAES().encrypt("");
     }
 
 }

@@ -13,7 +13,7 @@ public class RegistrationController {
     @Autowired
     private UserDaoImpl userDao;
 
-    @RequestMapping("/register")
+    @RequestMapping("/api/register")
     public User showRegister() {
         return new User();
     }
