@@ -7,10 +7,11 @@ As View, Angular-8 with routing is used. For the backend, Spring Boot v2.1.6 is 
 Java Persistence Api (JPA) is used to write the Business Logic. REST Api's are written to communicate between server ports 
 (Angular-> port:4200, SpringBoot -> port:8080, MySql -> port:3306)
 
-The project consist of a Login and Register page when user navigates to localhost:4200. On successfull login or Registration, a welcome page 
+The project consist of a Login and Register page when user navigates to localhost:4200. On successfull login or Registration as a user, a welcome page 
 all the user details and option to order your food. The Menu page list all the available items in database with their available quantity.
-When items are added to cart and navigated to payment page, it asks for card details. On clicking the pay now option, the purchased quantity
-get's seperated from DB as well as Menu component.
+When items are added to cart and navigated to payment page, it asks for card details. On clicking the pay now option, the purchased quantity get's seperated from DB as well as Menu component.
+
+Similarly, when a person logins or registers as a merchant, a page with the merchant details appers with an option to alter the menu. If a merchant add the quantity a post request is made and the DB updates itself. The component refreshes itself and the page doesn't need to refresh to see the changes.
 
 # Pre-Requisite
 1. [Java 7 or Above](https://java.com/en/download/help/download_options.xml) installed on device
@@ -77,9 +78,13 @@ This will fire up the Spring Boot at http://localhost:8080
     <td><img src="README_Resources/Menu.png" width="350" height="200" title="Menu"></td>
     <td><img src="README_Resources/Payment.png" width="350" height="200" title="Payment"></td>
   </tr>
+  <tr>
+    <td><img src="README_Resources/Orders.png" width="350" height="200" title="Order"></td>
+    <td><img src="README_Resources/Merchant.png" width="350" height="200" title="Merchant Login"></td>
+  </tr>
  </table>
  <div class="center">
-    <img src="README_Resources/Orders.png" width="350" height="200" title="Order">
+    <img src="README_Resources/MerchantMenu.png" width="350" height="200" title="Merchant Alter Menu Option">
  </div>
 
 ## Author 
