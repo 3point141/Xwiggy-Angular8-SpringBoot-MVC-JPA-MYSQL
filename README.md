@@ -64,20 +64,57 @@ vagrant up
 ```
 This will make your virtual machine in oracle virtual box or any service prover for vm with specifications :
 
-|Specification | Description |
-| --- | --- |
-| Operating System | ubuntu/trusty64(x64) v20190429.0.1 |
-| Base Memory | 512 MB |
+Specification | Description 
+ --- | --- 
+ Operating System | ubuntu/trusty64(x64) v20190429.0.1 
+ Base Memory | 512 MB 
 
-<br>
-The Shell script will install
-<br>
-|Application  | Description |<br>
-| npm         | 6.4.1       |<br>
-| node        | v10.14.0    |<br>
-|MySql server | xx          |<br>
+These services will automatically be installed via shell script :white_check_mark:
 
-Password for MySQL will be abcd1234
+~~~
+* npm - 6.4.1 
+* node - v10.14.0 
+* MySql server
+~~~
+***Password for MySQL will be abcd1234***
+
+3. Take the jar file from [here](https://github.com/3point141/Xwiggy-Angular8-SpringBoot-MVC-JPA-MYSQL/tree/master/FinalBuild) and place it in the vagrant file location. <br>
+
+4. Importing the mySql script from [here](https://github.com/3point141/Xwiggy-Angular8-SpringBoot-MVC-JPA-MYSQL/tree/master/Vagrant%20Resources) to Vagrant box. SSH the Vagrant box via terminal/cmd at the location of vagrant file
+```
+vagrant ssh
+sudo mysql -u root -p
+create database myusers
+exit
+```
+
+5. Installing JDK. In the same terminal where the ssh was done to Vagrant Box run the following command
+```
+sudo add-apt-repository ppa:openjdk-r/ppa -y
+sudo apt-get update
+sudo apt-get -y install openjdk-8-jdk
+```
+This will install Java for running the JAR file. <br>
+<br>
+
+6. Editing Host file.<br>
+For Windows user
+```
+c:\Windows\System32\Drivers\etc\hosts
+```
+Edit file as Administrator. Add this line in the end
+```
+192.168.33.10 vgdemo.local www.xwiggy.com 
+```
+***vgdemo is the name of folder where vagrant file and box is kept***
+
+7. Running the JAR file inside Vagrant Box
+```
+cd /var/www/html/
+java -jar xwiggy-0.0.1-SNAPSHOT.jar
+```
+8. open browser and navigate to http://xwiggy.com:8080 <br />
+9. Enjoy :relieved:
 
 ## Rest Api's
 | Url Mapping | Type | Function |
