@@ -15,6 +15,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { SuccessComponent } from './success/success.component';
 import { MerchantWelcomeComponent } from './merchant-welcome/merchant-welcome.component';
 import { MerchantMenuComponent } from './merchant-menu/merchant-menu.component';
+import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes:Routes=[
   {path:'login',
@@ -59,7 +60,7 @@ const appRoutes:Routes=[
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
