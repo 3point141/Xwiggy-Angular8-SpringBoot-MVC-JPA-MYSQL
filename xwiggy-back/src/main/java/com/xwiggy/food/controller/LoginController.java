@@ -16,11 +16,6 @@ public class LoginController {
     @Autowired
     private UserDaoImpl userDao;
 
-    @RequestMapping(value = "/")
-    public String redirect() {
-        return "forward:../../../../../../../../xwiggy-app/src/index.html";
-    }
-
     @RequestMapping("/login")
     public Login showLogin() {
         return new Login();
