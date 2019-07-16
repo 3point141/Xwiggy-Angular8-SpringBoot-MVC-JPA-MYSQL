@@ -16,9 +16,9 @@ public class LoginController {
     @Autowired
     private UserDaoImpl userDao;
 
-    @RequestMapping(value = "/{[path:[^\\.]*}")
+    @RequestMapping(value = "/")
     public String redirect() {
-        return "forward:/";
+        return "forward:/index.html";
     }
 
     @RequestMapping("/login")
