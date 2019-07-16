@@ -18,7 +18,7 @@ public class LoginController {
 
     @RequestMapping(value = "/")
     public String redirect() {
-        return "forward:/index.html";
+        return "forward:../../../../../../../../xwiggy-app/src/index.html";
     }
 
     @RequestMapping("/login")
