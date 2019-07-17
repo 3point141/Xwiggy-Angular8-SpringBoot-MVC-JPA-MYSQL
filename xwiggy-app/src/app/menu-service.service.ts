@@ -8,7 +8,7 @@ export class MenuServiceService {
 
   constructor(public HttpClient: HttpClient) { }
   public getItems():any{
-    let url = "http://localhost:8080/menu";
+    let url = "http://192.168.43.145:8080/menu";
     return this.HttpClient.get(url);
   }
 }
