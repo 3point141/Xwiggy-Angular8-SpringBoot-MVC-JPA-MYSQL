@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   sendFeedback(): void {
-    let url = "http://192.168.43.145:8080/login";
+    let url = "http://172.20.10.5:8080/login";
     let key='userData';
     this.http.post<User>(url,this.model).subscribe(
       res => {
