@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit {
 
   test:string;
   /*getTotal():void{
-    let url = "http://172.20.10.5:8080/values";
+    let url = "http://localhost:8080/values";
     this.http.post<string>(url,this.values).subscribe(
       res=>{
         sessionStorage.setItem('total',res.toString());
@@ -62,7 +62,7 @@ export class MenuComponent implements OnInit {
   }*/
 
   getTotal():void{
-    let url = "http://172.20.10.5:8080/cart";
+    let url = "http://localhost:8080/cart";
     this.http.post<number>(url,this.modalCart).subscribe(
 
       res=>{

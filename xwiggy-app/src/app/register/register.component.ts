@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
 
   usernamePresent():void{
     this.fontColor='';
-    let url = "http://172.20.10.5:8080/checkUserName";
+    let url = "http://localhost:8080/checkUserName";
 
 
 
@@ -92,7 +92,7 @@ export class RegisterComponent implements OnInit {
   registerUser():void{
     this.updateSelect();
 
-    let url = "http://172.20.10.5:8080/register";
+    let url = "http://localhost:8080/register";
     this.http.post<User>(url,this.model).subscribe(
       res=>{
         AppComponent.modelUser =res;

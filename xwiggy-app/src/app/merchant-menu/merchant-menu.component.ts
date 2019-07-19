@@ -40,7 +40,7 @@ export class MerchantMenuComponent implements OnInit {
   }
 
   getTotal():void{
-    let url = "http://172.20.10.5:8080/addToCart";
+    let url = "http://localhost:8080/addToCart";
     this.http.post<number>(url,this.modalCart).subscribe(
       res=>{
         this.ngOnInit();

@@ -22,7 +22,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   changeDB():void{
-    let url="http://172.20.10.5:8080/changeDB";
+    let url="http://localhost:8080/changeDB";
     this.http.get(url).subscribe(
       res=>{
         console.log("DB Updated");

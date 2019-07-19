@@ -26,11 +26,10 @@ export class LoginComponent implements OnInit {
   }
 
   sendFeedback(): void {
-    let url = "http://172.20.10.5:8080/login";
+    let url = "http://localhost:8080/login";
     let key='userData';
     this.http.post<User>(url,this.model).subscribe(
       res => {
-        // localStorage.setItem(key,JSON.stringify(res));
         sessionStorage.setItem(key,JSON.stringify(res));
         if(res!=null && !res.merchant) {
           this.router.navigate(['welcome']);
