@@ -47,7 +47,9 @@ export class AddItemComponent implements OnInit {
         res=>
         {
           console.log(this.newFoodItems);
-          alert("api hit");
+          alert("Item Added Successfully!");
+        },err=>{
+          alert("Failed to add item. Please Try after sometime!");
         }
       )
   }
