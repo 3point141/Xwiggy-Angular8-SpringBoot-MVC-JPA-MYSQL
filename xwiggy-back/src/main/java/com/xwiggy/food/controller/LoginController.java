@@ -16,6 +16,7 @@ public class LoginController {
     @Autowired
     private UserDaoImpl userDao;
 
+
     @RequestMapping("/login")
     public Login showLogin() {
         return new Login();
@@ -25,6 +26,7 @@ public class LoginController {
     public User loginProcess(@RequestBody Login login, Model model) {
         User user = null;
         user = userDao.validateUser(login);
+        if(user!=null)
         user.setPassword(null);
         return user;
     }

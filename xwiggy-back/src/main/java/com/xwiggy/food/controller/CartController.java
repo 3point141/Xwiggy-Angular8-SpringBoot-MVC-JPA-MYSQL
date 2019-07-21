@@ -2,9 +2,13 @@ package com.xwiggy.food.controller;
 
 import com.xwiggy.food.dao.CartDaoImpl;
 import com.xwiggy.food.model.Cart;
+import com.xwiggy.food.model.NewCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @RestController
 @CrossOrigin
@@ -13,11 +17,11 @@ public class CartController {
     @Autowired
     CartDaoImpl cartDao;
 
+
     @PostMapping("/cart")
-    public int getTotal(@RequestBody Cart cart, Model model){
-        Cart cart1 = cart;
-        cartDao.saveToCart(cart1);
-        return (cart1.getQuantity1()*50)+(cart1.getQuantity2()*20)+(cart1.getQuantity3()*80);
+    public int getTotal(@RequestBody NewCart[] cart, Model model){
+        cartDao.saveToCart(cart);
+        return cartDao.claculateTotal(cart);
     }
 
     @RequestMapping("/changeDB")
@@ -27,9 +31,24 @@ public class CartController {
     }
 
     @PostMapping("/addToCart")
-    public Cart increaseQuantity(@RequestBody Cart cart, Model model){
+    public NewCart[] increaseQuantity(@RequestBody NewCart[] cart, Model model){
         cartDao.addItems(cart);
         return cart;
     }
 
+    @PostMapping("/addNewItem")
+    public boolean addNewItem(@RequestParam("file") MultipartFile file, @RequestParam("newFoodItem") String newFoodData) throws IOException {
+        return cartDao.addNewItem(file,newFoodData);
+    }
+
+
+    @PostMapping("/addNewItemUrl")
+    public boolean addNewItemByUrl(@RequestParam("newFoodItem") String newFoodData) throws IOException {
+        return cartDao.addNewItemWithUrl(newFoodData);
+    }
+
+    @PostMapping("/checkItemId")
+    public boolean checkItemId(@RequestBody String itemId, Model model){
+        return !cartDao.itemIdAvailable(itemId);
+    }
 }
