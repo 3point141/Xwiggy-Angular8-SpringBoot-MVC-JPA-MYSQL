@@ -70,7 +70,7 @@
                             <outputDirectory>${project.build.directory}/classes/static/</outputDirectory >
                             <resources>
                                 <resource>
-                                    <directory>../../../XwiggyX/xwiggy-app/dist/xwiggy-app</directory>
+                                    <directory>../xwiggy-app/dist/xwiggy-app</directory>
                                 </resource>
                             </resources>
                         </configuration>
