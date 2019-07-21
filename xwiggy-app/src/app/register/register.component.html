@@ -1,4 +1,4 @@
-<div class="body">
+<div class="container body">
   <br><br><br><br>
   <H1 align="center">XWIGGY | Registration</H1>
   <br><br><br>
@@ -8,11 +8,13 @@
       <div class="offset-3"></div>
       <div class="col-md-6">
         <form name="form" #f="ngForm" (ngSubmit)="emailValidation&&phoneValidation&&passwordValidation&&f.form.valid && registerUser()" novalidate class="feedback-form">
-          <div *ngIf="present" class="alert alert-danger alert-box" align="center" style="width: 75%; margin: auto">
+          <div class="container" style="height: 35px;">
+          <div *ngIf="present" class="alert alert-danger alert-box" align="center" style="width: 75%; margin: auto;">
             <strong>UserName Already Taken!</strong>
           </div>
-          <div *ngIf="present==false" class="alert alert-success alert-box" align="center" style="width: 75%; margin: auto">
+          <div *ngIf="present==false" class="alert alert-success alert-box" align="center" style="width: 75%; margin: auto;">
             <strong>UserName Available!</strong>
+          </div>
           </div>
           <!-- UserName -->
           <table align="center">
@@ -28,7 +30,11 @@
                            #username="ngModel"
                            [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
                            required="required"/></td>
-                <td><a (click)="usernamePresent()" data-toggle="tooltip" data-placement="right" title="Click to check availability">Check Availbility</a> </td>
+                <td>
+                  <div class="container" align="center">
+                    <a (click)="usernamePresent()" data-toggle="tooltip" data-placement="right" title="Click to check availability"><img src="../../assets/images/checkAvailability.png" style="height: 25px;width: 25px"></a>
+                  </div>
+                </td>
 
               </tr>
           </div>
@@ -47,7 +53,7 @@
                            maxlength="16"
                            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
                            required="required"/></td>
-                <td><a *ngIf="!passwordValidation" class="password" data-toggle="tooltip" data-placement="right" title="Your Password should contain : &#013; 1 special character &#013; 1 Upper Case character &#013; 1 Numeric character &#013; Minumum Length = 8 &#013; Maximum length = 16">Follow the Password Rules</a> </td>
+                <td style="width: 58px; height: 35px; vertical-align: bottom" align="center"><a *ngIf="!passwordValidation" class="password" data-toggle="tooltip" data-placement="right" title="Your Password should contain : &#013; 1 special character &#013; 1 Upper Case character &#013; 1 Numeric character &#013; Minumum Length = 8 &#013; Maximum length = 16"><img src="../../assets/images/key.png" style="width: 30px; height: 30px"></a> </td>
               </tr>
           </div>
 
@@ -171,4 +177,25 @@
     </div>
   </div>
 </div>
+
+
+<!-- START CAPTCHA -->
+<!--<form onsubmit="return checkform(this);" class="formmargin">
+  <div class="capbox">
+    &lt;!&ndash;<div id="CaptchaDiv">73493</div>&ndash;&gt;
+    <div id="CaptchaDiv" class="disable-text-selection"><span (copy)="$event.preventDefault()" (cut)="$event.preventDefault()" (paste)="$event.preventDefault()">12345</span></div>
+    <div class="capbox-inner">
+      Type the above number:<br>
+      <input type="hidden" id="txtCaptcha"  placeholder="12345">
+      <input type="text" name="CaptchaInput" id="CaptchaInput" ondrop="return false;" onpaste="return false;"size="15"><br>
+    </div>
+  </div>
+  <br>
+  <br>
+  <input type="submit" value="Test Captcha"><br>
+</form>-->
+<!-- END CAPTCHA -->
+<!--(beforecopy)="$event.preventDefault()" (cut)="$event.preventDefault()" (paste)="$event.preventDefault()" ng-paste="$event.preventDefault()"-->
+
+
 

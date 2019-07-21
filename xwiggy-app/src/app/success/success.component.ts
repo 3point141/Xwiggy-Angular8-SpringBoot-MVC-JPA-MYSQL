@@ -14,10 +14,14 @@ export class SuccessComponent implements OnInit {
     if (sessionStorage.getItem("userData") == null) {
       this.router.navigate(['login']);
     }
+    if( sessionStorage.getItem("total")==null)
+      this.router.navigate(["menu"]);
   }
 
   clearLocal(){
     sessionStorage.clear();
   }
+
+
 
 }

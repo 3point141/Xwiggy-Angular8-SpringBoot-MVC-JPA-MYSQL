@@ -15,7 +15,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { SuccessComponent } from './success/success.component';
 import { MerchantWelcomeComponent } from './merchant-welcome/merchant-welcome.component';
 import { MerchantMenuComponent } from './merchant-menu/merchant-menu.component';
-import { PathLocationStrategy, LocationStrategy } from '@angular/common';
+import { AddItemComponent } from './add-item/add-item.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const appRoutes:Routes=[
   {path:'login',
@@ -37,7 +38,11 @@ const appRoutes:Routes=[
   {path:'merchantMenu',
   component:MerchantMenuComponent},
   {path:'',
-  component:HomeComponent}
+  component:HomeComponent},
+  {path:'addItem',
+  component:AddItemComponent},
+  {path:'contactUs',
+  component:ContactUsComponent},
 ];
 
 @NgModule({
@@ -51,16 +56,18 @@ const appRoutes:Routes=[
     CheckoutComponent,
     SuccessComponent,
     MerchantWelcomeComponent,
-    MerchantMenuComponent
+    MerchantMenuComponent,
+    AddItemComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes,{enableTracing:true}),
+    RouterModule.forRoot(appRoutes,{useHash: true}),
     FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

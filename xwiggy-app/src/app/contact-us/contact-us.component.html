@@ -1,0 +1,47 @@
+<br><br><br>
+<div class="body" align="center">
+  <h1>XWIGGY | CONTACT US</h1>
+</div>
+
+<br><br><br><br>
+<div class="body">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 " id="form_container" style="margin: auto">
+      <p> Please send your message below. We will get back to you at the earliest! </p>
+      <form role="form" method="post" id="reused_form" (ngSubmit)="sendFeedback()">
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="message"> Message:</label>
+            <textarea class="form-control" type="textarea" id="message" name="message" maxlength="6000" rows="7" [(ngModel)]="modelMessage.message"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label for="name"> Your Name:</label>
+            <input type="text" class="form-control" disabled="disabled" id="name" name="name" required placeholder="{{modelUser.firstname}} {{modelUser.lastname}}">
+          </div>
+          <div class="col-sm-6 form-group">
+            <label for="email"> Email:</label>
+            <input type="email" disabled="disabled" class="form-control" id="email" name="email" required placeholder="{{modelUser.email}}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 form-group">
+            <button type="submit" class="bigbutton" ><span>Send</span></button>
+          </div>
+          <div class="col-lg-4 form-group">
+            <button type="button" class="bigbutton" routerLink="/menu"><span>Menu</span></button>
+          </div>
+          <div class="col-lg-4 form-group">
+            <button type="button" class="bigbutton" routerLink="/home" (click)="clearLocal()"><span>Log Out</span></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<div *ngIf="gif">
+  <img src="../../assets/images/gif1.gif">
+</div>

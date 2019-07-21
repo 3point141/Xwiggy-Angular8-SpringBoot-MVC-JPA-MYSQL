@@ -1,8 +1,38 @@
 .body {
-  height: -webkit-fill-available;
   background: #393939;
   color: white;
   font: 14px Helvetica, sans-serif;
+}
+
+p{
+  margin-left: 23%;
+}
+
+table{
+  margin: auto;
+}
+
+img{
+  width: 20%;
+  align-self: center;
+}
+
+.align-contents{
+  background-color: #393939;
+  width: 100%;
+}
+
+
+td{
+  border-top: 0px;
+  color: #FFFFFF;
+}
+font{
+  color: #FFFFFF;
+  font-size: 4vw;
+}
+.welcome{
+  color: white;
 }
 
 label {

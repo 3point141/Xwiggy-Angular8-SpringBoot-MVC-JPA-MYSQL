@@ -2,7 +2,7 @@
 <br><br>
 <h1 align="center">Xwiggy | Menu</h1>
   <br><br>
-
+<!--<div class="container-fluid">
   <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
     <table align="center">
       <tr>
@@ -18,11 +18,11 @@
         </td>
       </tr>
       <tr>
-        <!--<ng-container *ngFor="let vale of values; let index=index;">
+        &lt;!&ndash;<ng-container *ngFor="let vale of values; let index=index;">
         <td>
           <input class="input-group-text input-align" type="number" name="name+{{index}}" min="0" max="{{model[index].quantity}}" value="{{values[index].quantity}}" [(ngModel)]="values[index].quantity">
         </td>
-        </ng-container>-->
+        </ng-container>&ndash;&gt;
         <td>
         <input class="input-group-text input-align" type="number" id="quantity1" name="quantity1" min="0" max="{{model[0].quantity}}" [(ngModel)]="modalCart.quantity1">
       </td>
@@ -53,8 +53,51 @@
     </table>
 
   </form>
+</div>
 
+</div>-->
 
+<!--************************************************-->
+<!--************************************************-->
+<!--************************************************-->
+<!--************************************************-->
+
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
+<div class="container-fluid" style="margin: 0 auto; width: 75%;">
+  <div class="row">
+    <div class="card-deck" *ngFor="let m of model; let index=index" style="padding-right: 3px">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top zoom" src="{{m.url}}" alt="{{m.item}}"  style="height: 190px">
+        <div class="card-block">
+          <div class="card-body">
+            <h5 class="card-title" style="color: black">{{m.item}}</h5>
+            <p class="card-text">Price : Rs.{{m.price}}</p>
+            <p> Quantity Available : {{m.quantity}}</p>
+          </div>
+        </div>
+      </div>
+      <input class="input-group-text input-align" type="number" name="name+{{index}}" min="0" max="{{model[index].quantity}}" value="{{values[index].quantity}}" [(ngModel)]="values[index].quantity">
+    </div>
+  </div>
 </div>
 
 
+<br><br>
+<div class="total" style="text-align: center; font-size: large">
+  Cart Total : {{total}}
+</div>
+<table align="center">
+  <tr>
+    <td>
+      <input type="submit" class="bigbutton" value="Add To Cart">
+    </td>
+    <td>
+      <button routerLink="/checkout" class="bigbutton"><span>Buy</span></button>
+    </td>
+    <td>
+      <button routerLink="/home" type="button" class="bigbutton" (click)="clearLocal()"><span>Log Out</span></button>
+    </td>
+  </tr>
+</table>
+</form>
+</div>

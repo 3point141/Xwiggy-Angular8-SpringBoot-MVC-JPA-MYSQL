@@ -47,23 +47,14 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  test:string;
-  /*getTotal():void{
-    let url = "http://localhost:8080/values";
-    this.http.post<string>(url,this.values).subscribe(
-      res=>{
-        sessionStorage.setItem('total',res.toString());
-        this.test=res;
-      },
-      err=>{
-        alert("Please select at least 1 item");
-      }
-    )
-  }*/
 
   getTotal():void{
+    console.log(this.values);
     let url = "http://localhost:8080/cart";
-    this.http.post<number>(url,this.modalCart).subscribe(
+    this.modalCart.quantity1=this.values[0].quantity;
+    this.modalCart.quantity2=this.values[1].quantity;
+    this.modalCart.quantity3=this.values[2].quantity;
+    this.http.post<number>(url,this.values).subscribe(
 
       res=>{
         // AppComponent.total=res;

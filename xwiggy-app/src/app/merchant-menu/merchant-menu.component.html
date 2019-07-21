@@ -3,6 +3,7 @@
   <h1 align="center">Xwiggy | Menu</h1>
   <br><br>
 
+<!--
   <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
     <table align="center">
       <tr>
@@ -33,7 +34,10 @@
     <table align="center">
       <tr>
         <td>
-          <input type="submit" class="bigbutton" value="Update Quantity">
+          <button class="bigbutton" routerLink="/addItem"><span>Add Item</span></button>
+        </td>
+        <td>
+          <button type="submit" class="bigbutton"><span>Update Quantity</span></button>
         </td>
         <td>
           <button routerLink="/home" type="button" class="bigbutton" (click)="clearLocal()"><span>Log Out</span></button>
@@ -42,5 +46,33 @@
     </table>
   </form>
 </div>
+-->
 
 
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
+  <div class="container-fluid" style="margin: 0 auto; width: 75%;">
+    <div class="row">
+      <div class="card-deck" *ngFor="let m of model; let index=index" style="padding-right: 3px">
+        <div class="card" style="width: 18rem;">
+          <!--<img class="card-img-top zoom" src="{{m.url}}" alt="{{m.item}}"  style="height: 190px">-->
+          <img class="card-img-top zoom" [src]="_DomSanitizationService.bypassSecurityTrustUrl(m.url)" style="height: 190px"/>
+          <div class="card-block">
+            <div class="card-body">
+              <h5 class="card-title" style="color: black">{{m.item}}</h5>
+              <p class="card-text">Price : Rs.{{m.price}}</p>
+              <p> Quantity Available : {{m.quantity}}</p>
+            </div>
+          </div>
+        </div>
+        <input class="input-group-text input-align" type="number" name="name+{{index}}" min="0" max="{{model[index].quantity}}" value="{{values[index].quantity}}" [(ngModel)]="values[index].quantity">
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="container" align="center">
+    <button class="bigbutton" routerLink="/addItem"><span>Add Item</span></button>
+    <button type="submit" class="bigbutton"><span>Update Quantity</span></button>
+    <button routerLink="/home" type="button" class="bigbutton" (click)="clearLocal()"><span>Log Out</span></button>
+  </div>
+</form>
+</div>

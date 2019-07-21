@@ -67,10 +67,32 @@ input[type=text], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  text-align: center;
+}
+
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .question{
   width: auto;
   height: 20px;
 }
+
+.blue{
+  border: 2px solid blue;
+  border-radius: 4px;
+}
+.red{
+   border: 2px solid red;
+   border-radius: 4px;
+ }
+
 

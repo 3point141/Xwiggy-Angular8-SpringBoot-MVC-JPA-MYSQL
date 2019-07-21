@@ -1,0 +1,148 @@
+<!--<body class="body">
+<h1 align="center">XWIGGY | Add A New Item</h1>
+<br><br><br>
+<form (ngSubmit)="onSubmit()">
+
+  <div class="container" style="height: 35px;">
+    <div *ngIf="present==false" class="alert alert-danger alert-box" align="center" style="width: 75%; margin: auto;">
+      <strong>Item ID Not Unique!</strong>
+    </div>
+    <div *ngIf="present" class="alert alert-success alert-box" align="center" style="width: 75%; margin: auto;">
+      <strong>Item ID Unique</strong>
+    </div>
+  </div>
+<br><br><br>
+<div class="container" align="center">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"><label style="text-align: right">Item ID</label></div>
+    <div class="col-sm-3"><input placeholder="Item Id" type="text" minlength="3" maxlength="3"
+                                 [(ngModel)]="newFoodItems.id" name="id" required="required"></div>
+    <div class="col-sm-3"><button type="button" (click)="checkAvailability()"><span>Check Availability</span></button></div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"><label style="text-align: right">Item Name</label></div>
+    <div class="col-sm-3"><input placeholder="Item Name" type="text" minlength="2" maxlength="20"
+                                 [(ngModel)]="newFoodItems.name" name="name" required="required"></div>
+    <div class="col-sm-3"></div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"><label>Price (INR)</label></div>
+    <div class="col-sm-3"><input placeholder="Price" type="number"
+                                 name="price" [(ngModel)]="newFoodItems.price" required="required" min="0"></div>
+    <div class="col-sm-3"></div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"><label>Available Quantity</label></div>
+    <div class="col-sm-3"><input placeholder="Available Quantity" type="number"
+                                 name="quantity" [(ngModel)]="newFoodItems.quantityAvailable" required="required" min="0"></div>
+    <div class="col-sm-3"></div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"><label>Food Image</label></div>
+    <div class="col-sm-3"><input type="file" (change)="onFileSelected($event)"></div>
+    <div class="col-sm-3"></div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"><label>Or</label></div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"></div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"><label>Food Image URL</label></div>
+    <div class="col-sm-3"><input type="text" placeholder="Paste The Url" name="fileDataF" [(ngModel)]="newFoodItems.fileDataF"></div>
+    <div class="col-sm-3"></div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 align-submit"><button class="bigbutton" type="submit"><span>Add Item</span></button></div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+</form>
+</body>-->
+
+
+<form (ngSubmit)="onSubmit()">
+<div class="card align-contents">
+  <p><img class="card-img-top" style="padding: 0 15px; float: left;" src="../../assets/images/shop.png" alt="Card image cap"><font>Welcome,<br> On-boarding New Items</font></p>
+  <div class="table-responsive panel">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td></td>
+        <td><div class="container" style="height: 75px;">
+          <div *ngIf="present==false" class="alert alert-danger alert-box" align="center" style="width: 60%; margin: auto;">
+            <strong>Item ID Not Unique!</strong>
+          </div>
+          <div *ngIf="present" class="alert alert-success alert-box" align="center" style="width: 60%; margin: auto;">
+            <strong>Item ID Unique</strong>
+          </div>
+        </div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-user"></i> Item Id</td>
+        <td><input placeholder="Item Id" type="text" minlength="3" maxlength="3"
+                   [(ngModel)]="newFoodItems.id" name="id" required="required"></td>
+        <td><button style="position: absolute; left: 68%" type="button" (click)="checkAvailability()"><span>Check Availability</span></button></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-user-circle"></i> Item Name</td>
+        <td><input placeholder="Item Name" type="text" minlength="2" maxlength="20"
+                   [(ngModel)]="newFoodItems.name" name="name" required="required"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-mobile"></i> Price (INR)</td>
+        <td><input placeholder="Price" type="number"
+                   name="price" [(ngModel)]="newFoodItems.price" required="required" min="0"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> Available Quantity</td>
+        <td><input placeholder="Available Quantity" type="number"
+                   name="quantity" [(ngModel)]="newFoodItems.quantityAvailable" required="required" min="0"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> Food Image</td>
+        <td><input type="file" (change)="onFileSelected($event)"></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> OR</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> Food Image URL</td>
+        <td><input type="text" placeholder="Paste The Url" name="fileDataF" [(ngModel)]="newFoodItems.fileDataF"></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" align="center" style="margin-left: 20%;">
+  <button class="bigbutton" routerLink="/home" (click)="clearLocal()"><span>LogOut</span></button>
+  <button class="bigbutton" routerLink="/merchantMenu"><span>Menu</span></button>
+  <button class="bigbutton" type="submit"><span>AddItem</span></button>
+</div>
+</form>

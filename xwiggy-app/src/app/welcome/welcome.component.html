@@ -1,4 +1,4 @@
-<div class="body">
+<!--<div class="body">
   <br><br><br>
   <h1 align="center">XWIGGY | HOME</h1>
   <br><br>
@@ -41,4 +41,40 @@
 
   </tr>
 </table>
+</div>-->
+<div class="body">
+<br><br><br>
+<h1 align="center">XWIGGY | HOME</h1>
+<br><br>
+</div>
+<div class="card align-contents">
+  <p><img class="card-img-top" style="padding: 0 15px; float: left;" src="../../assets/images/user.png" alt="Card image cap"><font>Welcome, {{modelUser.firstname}}<br> Account Type : User</font></p>
+  <div class="table-responsive panel">
+    <table class="table">
+      <tbody>
+
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-user"></i> First Name</td>
+        <td>{{modelUser.firstname}}</td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-user-circle"></i> Last Name</td>
+        <td>{{modelUser.lastname}}</td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-mobile"></i> Mobile Number</td>
+        <td>{{modelUser.phone}}</td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> E-Mail ID</td>
+        <td>{{modelUser.email}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" align="center">
+<button class="bigbutton" routerLink="/home" (click)="clearLocal()"><span>Log Out</span></button>
+<button class="bigbutton" routerLink="/menu"><span>Menu</span></button>
 </div>

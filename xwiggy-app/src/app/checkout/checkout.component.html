@@ -16,10 +16,12 @@
       <table align="center">
         <tr>
           <td><label>Card Number</label></td>
-          <td><input type="text" placeholder="Valid Card Number"
+          <td><input type="text" placeholder="xxxx xxxx xxxx xxxx"
                       minlength="16"
                       maxlength="16"
-                      required="required">
+                      [(ngModel)]="cardNumber"
+                      required="required"
+                      (keyup)="validCard()">
           </td>
         </tr>
         <tr>
@@ -27,8 +29,8 @@
           <td>
             <table>
               <tr>
-                <td><input type="text" placeholder="MM" minlength="2" maxlength="2" required="required"></td>
-                <td><input type="text" placeholder="YY" minlength="2" maxlength="2" required="required"></td>
+                <td style="min-width: 90px"><input type="number" placeholder="MM" min="1" max="12" required="required" [(ngModel)]="month" (keyup)="validMonth()"></td>
+                <td style="min-width: 90px"><input type="number" placeholder="YY" min="19" max="99" required="required" [(ngModel)]="year" (keyup)="validYear()"></td>
               </tr>
             </table>
           </td>
@@ -38,7 +40,7 @@
           <td>
             <table>
               <tr>
-                <td><input type="text" placeholder="CVV"></td>
+                <td style="min-width: 90px"><input type="number" placeholder="CVV" min="100" max="999" required="required" [(ngModel)]="cvv" (keyup)="validCvv()"></td>
                 <td><img class="question" src="http://pngimg.com/uploads/question_mark/question_mark_PNG49.png"
                          data-toggle="tooltip" data-placement="right" title="Card CVV Help"></td>
               </tr>
@@ -47,7 +49,7 @@
         </tr>
         <tr>
           <td><label>Cardholder Name</label></td>
-          <td><input type="text" placeholder="Name"></td>
+          <td><input type="text" placeholder="Name" required="required" minlength="4" maxlength="10" [(ngModel)]="nameOnCard" (keyup)="validName()"></td>
         </tr>
       </table>
       <table>
@@ -62,6 +64,6 @@
       </table>
     </div>
   </div>
-
-
 </div>
+
+

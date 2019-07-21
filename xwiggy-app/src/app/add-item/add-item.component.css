@@ -1,3 +1,8 @@
+input{
+  text-align: center;
+}
+
+
 .body {
   background: #393939;
   color: white;
@@ -44,11 +49,10 @@ label {
   width: 140px;
 }
 
-form div {
-  overflow: hidden;
-  margin: 0 0 5px 0;
-}
 
+.align-submit{
+  display: block;
+}
 
 .bigbutton {
   border-radius: 4px;
@@ -58,7 +62,7 @@ form div {
   text-align: center;
   font-size: 15px;
   padding: 20px;
-  width: 120px;
+  width: 25%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -88,3 +92,4 @@ form div {
   opacity: 1;
   right: 0;
 }
+

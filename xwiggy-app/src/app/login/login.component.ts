@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     let key='userData';
     this.http.post<User>(url,this.model).subscribe(
       res => {
+        // localStorage.setItem(key,JSON.stringify(res));
         sessionStorage.setItem(key,JSON.stringify(res));
         if(res!=null && !res.merchant) {
           this.router.navigate(['welcome']);
